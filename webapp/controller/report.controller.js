@@ -232,7 +232,7 @@ sap.ui.define([
 
 		//value help for Claim No.
 		handleValueHelpRequestId: function (oEvent) {
-			var oDataModel = this.getOwnerComponent().getModel("Catalog");
+			var oDataModel = this.getOwnerComponent().getModel("Eclaims");
 			var aFilter = [];
 			var orFilter = [];
 			var andFilter = [];
@@ -269,7 +269,7 @@ sap.ui.define([
 			//var filters = this.generateFilter('CLAIM_TYPE_C', '1', sap.ui.model.FilterOperator.StartsWith);
 			if (userRoleGrp === "NUS_CHRS_ECLAIMS_SUPER_ADMIN" || (!!claimAuthorizations && claimAuthorizations.length > 0)) {
 				var that = this;
-				oDataModel.read("/eclaims_data", {
+				oDataModel.read("/v_eclaim_request_view", {
 					//select: "REQUEST_ID",
 					//parameters: {select: "REQUEST_ID"}
 					filters: aFilter,
@@ -335,7 +335,7 @@ sap.ui.define([
 
 		handleSearchRequestId: function (oEvent) {
 
-			var oDataModel = this.getOwnerComponent().getModel("Catalog");
+			var oDataModel = this.getOwnerComponent().getModel("Eclaims");
 			//var uluFdluFilter;// = [];
 			var orFilter = [];
 			var andFilter = [];
@@ -397,7 +397,7 @@ sap.ui.define([
 			if (userRoleGrp === "NUS_CHRS_ECLAIMS_SUPER_ADMIN" || (!!claimAuthorizations && claimAuthorizations.length > 0)) {
 				var that = this;
 
-				oDataModel.read("/EclaimRequestViews", {
+				oDataModel.read("/v_eclaim_request_view", {
 					filters: [filtersGrp],
 					urlParameters: {
 						"$select": "REQUEST_ID"
