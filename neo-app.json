@@ -74,6 +74,15 @@
       "description": "IAS SCIM API"
     },
     {
+      "path": "/eclaims",
+      "target": {
+        "type": "destination",
+        "name": "nusbtpeclaim",
+        "entryPath": "/v2/eclaims"
+      },
+      "description": "NUS BTP Business Logic Destiantion"
+    },
+    {
       "path": "/services/userapi",
       "target": {
         "type": "service",
